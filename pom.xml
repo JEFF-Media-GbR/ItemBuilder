@@ -12,9 +12,6 @@
     <properties>
         <spigotVersion>1.19.3</spigotVersion>
         <javaVersion>8</javaVersion>
-        <testServerPath>C:\mctest\plugins</testServerPath>
-        <shadedPackage>com.jeff_media.itembuilder.shaded</shadedPackage>
-
         <!-- Do not change the following properties -->
         <outputDirectory>target</outputDirectory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -89,12 +86,6 @@
     </repositories>
 
     <dependencies>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>${spigotVersion}-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
         <!-- MockBukkit start -->
         <dependency>
             <groupId>com.github.seeseemelk</groupId>
@@ -114,7 +105,38 @@
             <version>2.0.6</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.19.3-R0.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
         <!-- MockBukkit end -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${spigotVersion}-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations-java5</artifactId>
+            <version>23.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>jeff-media-public</id>
+            <url>https://hub.jeff-media.com/nexus/repository/jeff-media-public/</url>
+        </repository>
+    </distributionManagement>
 
 </project>
